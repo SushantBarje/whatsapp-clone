@@ -1,1 +1,7 @@
-.ChatBox {}
+.ChatBox {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: url("https://i.pinimg.com/736x/8c/98/99/8c98994518b575bfd8c949e91d20548b.jpg")
+    fixed;
+}

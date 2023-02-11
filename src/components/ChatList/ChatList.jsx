@@ -1,10 +1,23 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./ChatList.css";
+import { useDispatch } from "react-redux";
+import { enterRoom } from "../../features/chatSlice";
 
-const ChatList = ({ imageURL, chatName, timestamp, lastMessage }) => {
+const ChatList = ({ imageURL, chatName, timestamp, lastMessage, id }) => {
+  const dispatch = useDispatch();
+
+  const selectChat = () => {
+    if (id) {
+      dispatch(
+        enterRoom({
+          roomId: id,
+        })
+      );
+    }
+  };
   return (
-    <div className="chatList">
+    <div className="chatList" onClick={selectChat}>
       <img src={imageURL} />
       <div className="chatList__details">
         <h4>

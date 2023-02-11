@@ -50,6 +50,18 @@ const AppBody = () => {
             lastMessage={
               "Hellodsfasdfjkajsdlfkajsldkfjlaskdfjaksdjflkasdjlfkasjdlfkasjdlfksdafsdfasdf"
             }
+            id="1"
+          ></ChatList>
+          <ChatList
+            imageURL={
+              "https://pps.whatsapp.net/v/t61.24694-24/156606516_223405766360003_6135443148643623556_n.jpg?stp=dst-jpg_s96x96&ccb=11-4&oh=01_AdQhQbDkZgf65dzn3J_5pBejETdf8JhNHTG5E1d_J5NHew&oe=63F49FB8"
+            }
+            chatName={"Supriya Barje"}
+            timestamp={"6:54 pm"}
+            lastMessage={
+              "Hellodsfasdfjkajsdlfkajsldkfjlaskdfjaksdjflkasdjlfkasjdlfkasjdlfksdafsdfasdf"
+            }
+            id="2"
           ></ChatList>
         </div>
       </div>

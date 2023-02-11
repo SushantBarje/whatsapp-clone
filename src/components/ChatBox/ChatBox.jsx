@@ -3,11 +3,9 @@ import PropTypes from "prop-types";
 import "./ChatBox.css";
 
 const ChatBox = () => {
-  return (
-    <div className="ChatBox">
-      <h1>ChatBox component</h1>
-    </div>
-  );
+  return <div className="ChatBox">
+    
+  </div>;
 };
 
 ChatBox.propTypes = {};
