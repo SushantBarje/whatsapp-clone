@@ -1,0 +1,18 @@
+.HeaderLeft {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: var(--whatsapp-body-background-grey);
+}
+
+.HeaderLeft > img {
+  object-fit: cover;
+  height: 40px;
+  border-radius: 999px;
+  margin-left: 5px;
+}
+
+.headerLeft__icon {
+  margin-right: 10px !important;
+}

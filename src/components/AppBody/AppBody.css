@@ -1,4 +1,5 @@
 .appBody {
+  display: flex;
   height: 95vh;
   width: 97vw;
   position: absolute;
@@ -9,3 +10,39 @@
   margin: auto;
   background-color: white;
 }
+
+.appBody__left {
+  flex: 0.3;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--whatsapp-body-background-grey);
+}
+
+.chatSearch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+  border-bottom: 1px solid var(--whatsapp-body-background-grey);
+}
+
+.chatSearch__input {
+  display: flex;
+  align-items: center;
+  flex: 0.98;
+  background-color: var(--whatsapp-body-background-grey);
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+.chatSearch__input > input {
+  margin-left: 30px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: medium;
+  font-weight: 100;
+  color: gray;
+}
+
+
