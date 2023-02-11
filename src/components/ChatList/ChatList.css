@@ -1,0 +1,46 @@
+.chatList {
+  display: flex;
+  align-items: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--whatsapp-body-background-grey);
+  transition: 0.2s;
+}
+
+.chatList:hover{
+    background-color: var(--whatsapp-body-background-grey);
+}
+
+.chatList > img {
+  object-fit: cover;
+  height: 50px;
+  border-radius: 999px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.chatList__details {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.chatList__details > h4 {
+  display: flex;
+  justify-content: space-between;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.chatList__details > p {
+  width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chatList_timestamp {
+  margin-right: 20px;
+  font-size: 13px;
+  color: #667781;
+  font-weight: 400;
+}
