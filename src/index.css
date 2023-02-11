@@ -5,6 +5,12 @@
 }
 
 :root {
-  --whatsapp-body-background-green: #00A783;
-  --whatsapp-body-background-grey: #F0F2F5;
+  --whatsapp-body-background-green: #00a783;
+  --whatsapp-body-background-grey: #f0f2f5;
+  --whatsapp-body-background-darkgrey: #cfd5d8;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.MuiSvgIcon-root {
+  color: #6e6f70;
 }

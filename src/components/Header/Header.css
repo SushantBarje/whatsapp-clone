@@ -1,4 +1,4 @@
-.HeaderLeft {
+.Header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -6,13 +6,25 @@
   background-color: var(--whatsapp-body-background-grey);
 }
 
-.HeaderLeft > img {
+.header_profileSection {
+  display: flex;
+  align-items: center;
+  
+}
+
+.header_profileSection > h3{
+  margin-left: 15px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.header_profileSection > img {
   object-fit: cover;
   height: 40px;
   border-radius: 999px;
   margin-left: 5px;
 }
 
-.headerLeft__icon {
+.header__option {
   margin-right: 10px !important;
 }

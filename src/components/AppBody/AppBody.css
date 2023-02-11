@@ -15,7 +15,13 @@
   flex: 0.3;
   display: flex;
   flex-direction: column;
-  border-right: 1px solid var(--whatsapp-body-background-grey);
+  border-right: 1px solid rgb(217, 217, 217);
+}
+
+.appBody__right {
+  position: relative;
+  flex: 0.7;
+  overflow: hidden;
 }
 
 .chatSearch {
@@ -45,4 +51,64 @@
   color: gray;
 }
 
+.chat_list_container {
+  overflow-y: scroll;
+}
 
+.chat_list_container::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(217, 217, 217);
+  /* background-color: var(--whatsapp-body-background-grey); */
+  border-radius: 10px;
+}
+
+.chat_box {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: url("https://i.pinimg.com/736x/8c/98/99/8c98994518b575bfd8c949e91d20548b.jpg")
+    fixed;
+}
+
+.input_box {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  padding: 10px 10px;
+  background-color: var(--whatsapp-body-background-grey);
+}
+
+.input_box > form {
+  flex: 0.95;
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  border-radius: 5px;
+}
+
+.input_box > form > input {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  font-size: 16px;
+  font-weight: 50;
+}
+
+.input_box > form > button {
+  display: none;
+}
+
+.input_chat_option {
+  margin-right: 10px !important;
+}

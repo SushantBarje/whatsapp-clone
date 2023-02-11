@@ -10,5 +10,5 @@
 
 .box-2 {
   flex: 0.85;
-  background-color: var(--whatsapp-body-background-grey);
+  background-color: var(--whatsapp-body-background-darkgrey);
 }
