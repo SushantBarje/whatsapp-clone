@@ -3,3 +3,8 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+:root {
+  --whatsapp-body-background-green: #00A783;
+  --whatsapp-body-background-grey: #ebe5de;
+}

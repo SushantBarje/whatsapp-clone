@@ -34,6 +34,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@vitejs/plugin-react", "virtual:7528f682922fdb22c6ec14c3f971f4a2694e9b7b5205027ad21996caede354a5c976c0139ceeda4d04006d439b0f7558ae67ced4844f45655faeb136f0ee9576#npm:3.1.0"],\
             ["firebase", "npm:9.17.1"],\
             ["generate-react-cli", "npm:8.2.0"],\
+            ["prop-types", "npm:15.8.1"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:7528f682922fdb22c6ec14c3f971f4a2694e9b7b5205027ad21996caede354a5c976c0139ceeda4d04006d439b0f7558ae67ced4844f45655faeb136f0ee9576#npm:18.2.0"],\
             ["vite", "virtual:7528f682922fdb22c6ec14c3f971f4a2694e9b7b5205027ad21996caede354a5c976c0139ceeda4d04006d439b0f7558ae67ced4844f45655faeb136f0ee9576#npm:4.1.1"]\
@@ -3542,6 +3543,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["object-assign", [\
+        ["npm:4.1.1", {\
+          "packageLocation": "./.yarn/cache/object-assign-npm-4.1.1-1004ad6dec-fcc6e4ea8c.zip/node_modules/object-assign/",\
+          "packageDependencies": [\
+            ["object-assign", "npm:4.1.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["once", [\
         ["npm:1.4.0", {\
           "packageLocation": "./.yarn/cache/once-npm-1.4.0-ccf03ef07a-cd0a885013.zip/node_modules/once/",\
@@ -3720,6 +3730,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["prop-types", [\
+        ["npm:15.8.1", {\
+          "packageLocation": "./.yarn/cache/prop-types-npm-15.8.1-17c71ee7ee-c056d3f1c0.zip/node_modules/prop-types/",\
+          "packageDependencies": [\
+            ["prop-types", "npm:15.8.1"],\
+            ["loose-envify", "npm:1.4.0"],\
+            ["object-assign", "npm:4.1.1"],\
+            ["react-is", "npm:16.13.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["protobufjs", [\
         ["npm:6.11.3", {\
           "packageLocation": "./.yarn/unplugged/protobufjs-npm-6.11.3-566fb31188/node_modules/protobufjs/",\
@@ -3791,6 +3813,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packagePeers": [\
             "@types/react",\
             "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["react-is", [\
+        ["npm:16.13.1", {\
+          "packageLocation": "./.yarn/cache/react-is-npm-16.13.1-a9b9382b4f-f7a19ac349.zip/node_modules/react-is/",\
+          "packageDependencies": [\
+            ["react-is", "npm:16.13.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -4378,6 +4409,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@vitejs/plugin-react", "virtual:7528f682922fdb22c6ec14c3f971f4a2694e9b7b5205027ad21996caede354a5c976c0139ceeda4d04006d439b0f7558ae67ced4844f45655faeb136f0ee9576#npm:3.1.0"],\
             ["firebase", "npm:9.17.1"],\
             ["generate-react-cli", "npm:8.2.0"],\
+            ["prop-types", "npm:15.8.1"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:7528f682922fdb22c6ec14c3f971f4a2694e9b7b5205027ad21996caede354a5c976c0139ceeda4d04006d439b0f7558ae67ced4844f45655faeb136f0ee9576#npm:18.2.0"],\
             ["vite", "virtual:7528f682922fdb22c6ec14c3f971f4a2694e9b7b5205027ad21996caede354a5c976c0139ceeda4d04006d439b0f7558ae67ced4844f45655faeb136f0ee9576#npm:4.1.1"]\
