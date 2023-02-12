@@ -1,0 +1,36 @@
+{
+  "users": [
+    {
+      "sushant@gmail.com": {
+        "name": "Sushant Barje",
+        "imageURL": "abdfa.png",
+        "chats": [
+          {
+            "sahil@gmail.com": {
+              "messages": [
+                {
+                  "msg1": {
+                    "message": "Hello Sahil",
+                    "timestamp": "10/10/20 6:30 pm",
+                    "seen": true,
+                    "sender": "sushant@gmail.com",
+                    "recevier": "sahil@gmail.com"
+                  }
+                },
+                {
+                  "msg2": {
+                    "message": "Hello Sushant",
+                    "timestamp": "10/10/20 6:31 pm",
+                    "seen": true,
+                    "sender": "sahil@gmail.com",
+                    "recevier": "sushant@gmail.com"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
