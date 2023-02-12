@@ -1,0 +1,27 @@
+.Chat {
+  max-width: 300px;
+  background-color: #d9fdd3;
+  overflow: hidden;
+  margin: 10px;
+  border: 1px solid black;
+  padding: 5px; 
+}
+
+.Chat > p {
+  word-wrap: break-word;
+}
+
+.chat__timestamp {
+  font-size: 11px;
+  text-align: end;
+}
+.chat__messageBox {
+  display: flex;
+  padding: 3px;
+  background-color: #d9fdd3;
+  justify-content: space-between;
+}
+
+.chat_timestamp {
+  font-size: 11px;
+}

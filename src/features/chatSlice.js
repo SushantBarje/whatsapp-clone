@@ -1,22 +1,22 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  roomId: null,
+  chatId: null,
 };
 
 export const chatSlice = createSlice({
-  name: "app",
+  name: "chat",
   initialState,
 
   reducers: {
-    enterRoom: (state, action) => {
-      state.roomId = action.payload.roomId;
+    enterChat: (state, action) => {
+      state.chatId = action.payload.chatId;
     },
   },
 });
 
-export const { enterRoom } = chatSlice.actions;
+export const { enterChat } = chatSlice.actions;
 
-export const selectRoomId = (state) => state.chat.roomId;
+export const selectChatId = (state) => state.chat.chatId;
 
 export default chatSlice.reducer;

@@ -9,8 +9,10 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 const Header = ({ menuOptions, imageURL, chatName }) => {
   const MenuOptionsDisplay = (menuOptions) => {
-    return menuOptions.map((menuOption) => (
-      <IconButton className="header__option">{menuOption}</IconButton>
+    return menuOptions.map((menuOption, index) => (
+      <IconButton key={index} className="header__option">
+        {menuOption}
+      </IconButton>
     ));
   };
   return (

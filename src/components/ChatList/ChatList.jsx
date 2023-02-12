@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./ChatList.css";
 import { useDispatch } from "react-redux";
-import { enterRoom } from "../../features/chatSlice";
+import { enterChat } from "../../features/chatSlice";
 
 const ChatList = ({ imageURL, chatName, timestamp, lastMessage, id }) => {
   const dispatch = useDispatch();
@@ -10,8 +10,8 @@ const ChatList = ({ imageURL, chatName, timestamp, lastMessage, id }) => {
   const selectChat = () => {
     if (id) {
       dispatch(
-        enterRoom({
-          roomId: id,
+        enterChat({
+          chatId: id,
         })
       );
     }

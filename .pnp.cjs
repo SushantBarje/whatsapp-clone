@@ -41,6 +41,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prop-types", "npm:15.8.1"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:7528f682922fdb22c6ec14c3f971f4a2694e9b7b5205027ad21996caede354a5c976c0139ceeda4d04006d439b0f7558ae67ced4844f45655faeb136f0ee9576#npm:18.2.0"],\
+            ["react-firebase-hooks", "virtual:7528f682922fdb22c6ec14c3f971f4a2694e9b7b5205027ad21996caede354a5c976c0139ceeda4d04006d439b0f7558ae67ced4844f45655faeb136f0ee9576#npm:5.1.1"],\
             ["react-hook-form", "virtual:7528f682922fdb22c6ec14c3f971f4a2694e9b7b5205027ad21996caede354a5c976c0139ceeda4d04006d439b0f7558ae67ced4844f45655faeb136f0ee9576#npm:7.43.1"],\
             ["react-redux", "virtual:7528f682922fdb22c6ec14c3f971f4a2694e9b7b5205027ad21996caede354a5c976c0139ceeda4d04006d439b0f7558ae67ced4844f45655faeb136f0ee9576#npm:8.0.5"],\
             ["vite", "virtual:7528f682922fdb22c6ec14c3f971f4a2694e9b7b5205027ad21996caede354a5c976c0139ceeda4d04006d439b0f7558ae67ced4844f45655faeb136f0ee9576#npm:4.1.1"]\
@@ -4543,6 +4544,32 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["react-firebase-hooks", [\
+        ["npm:5.1.1", {\
+          "packageLocation": "./.yarn/cache/react-firebase-hooks-npm-5.1.1-a1335e328c-f7dbc42202.zip/node_modules/react-firebase-hooks/",\
+          "packageDependencies": [\
+            ["react-firebase-hooks", "npm:5.1.1"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:7528f682922fdb22c6ec14c3f971f4a2694e9b7b5205027ad21996caede354a5c976c0139ceeda4d04006d439b0f7558ae67ced4844f45655faeb136f0ee9576#npm:5.1.1", {\
+          "packageLocation": "./.yarn/__virtual__/react-firebase-hooks-virtual-595e880fb1/0/cache/react-firebase-hooks-npm-5.1.1-a1335e328c-f7dbc42202.zip/node_modules/react-firebase-hooks/",\
+          "packageDependencies": [\
+            ["react-firebase-hooks", "virtual:7528f682922fdb22c6ec14c3f971f4a2694e9b7b5205027ad21996caede354a5c976c0139ceeda4d04006d439b0f7558ae67ced4844f45655faeb136f0ee9576#npm:5.1.1"],\
+            ["@types/firebase", null],\
+            ["@types/react", "npm:18.0.27"],\
+            ["firebase", "npm:9.17.1"],\
+            ["react", "npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/firebase",\
+            "@types/react",\
+            "firebase",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["react-hook-form", [\
         ["npm:7.43.1", {\
           "packageLocation": "./.yarn/cache/react-hook-form-npm-7.43.1-6b216fde13-a15b672885.zip/node_modules/react-hook-form/",\
@@ -5290,6 +5317,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prop-types", "npm:15.8.1"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:7528f682922fdb22c6ec14c3f971f4a2694e9b7b5205027ad21996caede354a5c976c0139ceeda4d04006d439b0f7558ae67ced4844f45655faeb136f0ee9576#npm:18.2.0"],\
+            ["react-firebase-hooks", "virtual:7528f682922fdb22c6ec14c3f971f4a2694e9b7b5205027ad21996caede354a5c976c0139ceeda4d04006d439b0f7558ae67ced4844f45655faeb136f0ee9576#npm:5.1.1"],\
             ["react-hook-form", "virtual:7528f682922fdb22c6ec14c3f971f4a2694e9b7b5205027ad21996caede354a5c976c0139ceeda4d04006d439b0f7558ae67ced4844f45655faeb136f0ee9576#npm:7.43.1"],\
             ["react-redux", "virtual:7528f682922fdb22c6ec14c3f971f4a2694e9b7b5205027ad21996caede354a5c976c0139ceeda4d04006d439b0f7558ae67ced4844f45655faeb136f0ee9576#npm:8.0.5"],\
             ["vite", "virtual:7528f682922fdb22c6ec14c3f971f4a2694e9b7b5205027ad21996caede354a5c976c0139ceeda4d04006d439b0f7558ae67ced4844f45655faeb136f0ee9576#npm:4.1.1"]\
