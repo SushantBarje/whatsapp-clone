@@ -1,1 +1,45 @@
-.Register {}
+.Register {
+  flex: 0.7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 130px;
+}
+.Register > h3 {
+  margin-top: 20px;
+  margin-bottom: 0;
+  font-size: 20px;
+}
+
+.Register > img {
+  object-fit: cover;
+  height: 150px;
+}
+
+.Register > form {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.register__input {
+  display: flex;
+  align-items: center;
+  background-color: var(--whatsapp-body-background-grey);
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  width: 300px;
+}
+
+.register__input > input {
+  margin-left: 20px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+.Register > form > button {
+  margin-top: 10px;
+  background-color: #1bd741 !important;
+}

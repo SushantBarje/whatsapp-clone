@@ -12,19 +12,35 @@ const Layout = () => {
   return (
     <div className="Layout">
       <div className="sideWall">
-        <h2>
-          Not Connected<div> Hmm... Let's Connect now.</div>
-        </h2>
-        <Button
-          onClick={(e) => setRegister(true)}
-          variant="contained"
-          endIcon={<WhatsAppIcon></WhatsAppIcon>}
-        >
-          Register
-        </Button>
+        {isRegister ? (
+          <>
+            <h2>
+              Wow great move<div> Start with your Email</div>
+            </h2>
+            <Button
+              onClick={(e) => setRegister(false)}
+              variant="contained"
+              endIcon={<WhatsAppIcon></WhatsAppIcon>}
+            >
+              Oops! Login
+            </Button>
+          </>
+        ) : (
+          <>
+            <h2>
+              Not Connected<div> Hmm... Let's Connect now.</div>
+            </h2>
+            <Button
+              onClick={(e) => setRegister(true)}
+              variant="contained"
+              endIcon={<WhatsAppIcon></WhatsAppIcon>}
+            >
+              Register
+            </Button>
+          </>
+        )}
       </div>
-      <Login></Login>
-      <Register></Register>
+      {isRegister ? <Register></Register> : <Login></Login>}
     </div>
   );
 };

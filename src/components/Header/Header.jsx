@@ -6,6 +6,7 @@ import IconButton from "@mui/material/IconButton";
 import DonutLargeIcon from "@mui/icons-material/DonutLarge";
 import ChatIcon from "@mui/icons-material/Chat";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import Avatar from "@mui/material/Avatar";
 
 const Header = ({ menuOptions, imageURL, chatName }) => {
   const MenuOptionsDisplay = (menuOptions) => {
@@ -18,7 +19,7 @@ const Header = ({ menuOptions, imageURL, chatName }) => {
   return (
     <div className="Header">
       <div className="header_profileSection">
-        <img src={imageURL} />
+        <Avatar sx={{ width: 40, height: 40 }} src={imageURL} />
         <h3>{chatName}</h3>
       </div>
 

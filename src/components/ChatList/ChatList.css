@@ -7,14 +7,11 @@
   transition: 0.2s;
 }
 
-.chatList:hover{
-    background-color: var(--whatsapp-body-background-grey);
+.chatList:hover {
+  background-color: var(--whatsapp-body-background-grey);
 }
 
-.chatList > img {
-  object-fit: cover;
-  height: 50px;
-  border-radius: 999px;
+.chatList > .avatar {
   margin-left: 15px;
   margin-right: 15px;
 }
