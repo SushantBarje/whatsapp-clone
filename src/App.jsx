@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import AppBody from "./components/AppBody/AppBody";
 import Layout from "./components/Layout/Layout";
@@ -13,27 +13,30 @@ function App() {
   const userData = useSelector(selectUserData);
   const dispatch = useDispatch();
   // console.log(user);
-  onAuthStateChanged(auth, (userCredentials) => {
-    if (userCredentials) {
-      console.log("User logged in");
-      console.log(userCredentials);
-      // dispatch(
-      //   login({
-      //     email: userCredentials.email,
-      //     displayName: userCredentials.displayName,
-      //     id: userCredentials.uid,
-      //     photoURL: userCredentials.photoURL,
-      //   })
-      // );
-      setUser(true);
-    } else {
-      console.log("user signed off");
-    }
-  });
-
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (userCredentials) => {
+      if (userCredentials) {
+        console.log("User logged in");
+        console.log(userCredentials);
+        dispatch(
+          login({
+            email: userCredentials.email,
+            displayName: userCredentials.displayName,
+            id: userCredentials.uid,
+            photoURL: userCredentials.photoURL,
+          })
+        );
+        setUser(true);
+      } else {
+        console.log("user signed off");
+      }
+    });
+    return unsubscribe;
+  }, []);
+  console.log("userdata", userData);
   return (
     <div className="app">
-      {!user ? (
+      {userData.user === null ? (
         <Layout></Layout>
       ) : (
         <>

@@ -4,9 +4,11 @@ import {
   updateProfile,
   signInWithEmailAndPassword,
 } from "firebase/auth";
-import { auth } from "../firebase";
+import { db, auth } from "../firebase";
+import { setDoc, doc } from "firebase/firestore";
 
 export const createUser = ({ fullName, email, password }) => {
+    
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       const user = userCredential.user;
@@ -14,6 +16,11 @@ export const createUser = ({ fullName, email, password }) => {
       updateProfile(auth.currentUser, {
         displayName: fullName,
         photoURL: " ",
+      }).then(async () => {
+        const docRef = await setDoc(doc(db, "users", email), {
+          name: fullName,
+          photoURL: " ",
+        });
       });
     })
     .catch((error) => {

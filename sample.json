@@ -7,6 +7,8 @@
         "chats": [
           {
             "sahil@gmail.com": {
+              "name": "Sahil Joshi",
+              "imageURL": "abdadfkad",
               "messages": [
                 {
                   "msg1": {
