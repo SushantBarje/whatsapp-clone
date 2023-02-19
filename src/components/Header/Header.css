@@ -9,10 +9,9 @@
 .header_profileSection {
   display: flex;
   align-items: center;
-  
 }
 
-.header_profileSection > h3{
+.header_profileSection > h3 {
   margin-left: 15px;
   font-size: 16px;
   font-weight: 400;
@@ -27,4 +26,33 @@
 
 .header__option {
   margin-right: 10px !important;
+}
+
+.header_profileSection {
+  position: relative;
+}
+
+.header__left__profile__menu {
+  position: absolute;
+  bottom: -110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 250px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #ffffff;
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+}
+
+.header__left__profile__menu > p {
+  padding: 10px 10px 10px 20px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #59666e;
+}
+
+.header__left__profile__menu > p:hover {
+  background-color: #f5f6f6;
 }

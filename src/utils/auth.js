@@ -8,7 +8,6 @@ import { db, auth } from "../firebase";
 import { setDoc, doc } from "firebase/firestore";
 
 export const createUser = ({ fullName, email, password }) => {
-    
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       const user = userCredential.user;

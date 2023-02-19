@@ -5,7 +5,13 @@ import { useDispatch } from "react-redux";
 import { enterChat } from "../../features/chatSlice";
 import Avatar from "@mui/material/Avatar";
 
-const ChatList = ({ imageURL, chatName, timestamp, lastMessage, id }) => {
+const ChatList = ({
+  imageURL,
+  chatName,
+  timestamp = " ",
+  lastMessage = " ",
+  id,
+}) => {
   const dispatch = useDispatch();
 
   const selectChat = () => {
@@ -17,6 +23,7 @@ const ChatList = ({ imageURL, chatName, timestamp, lastMessage, id }) => {
       );
     }
   };
+
   return (
     <div className="chatList" onClick={selectChat}>
       <Avatar

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "./Header.css";
 import GroupsIcon from "@mui/icons-material/Groups";
@@ -12,8 +12,17 @@ import { signOut } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { login } from "../../features/userSlice";
 
-const Header = ({ menuOptions, imageURL, chatName }) => {
+const Header = ({ menuOptions, imageURL, chatName, whichHeader }) => {
   const dispatch = useDispatch();
+  const [leftHeaderPicClick, setleftHeaderPicClick] = useState(false);
+  const selectProfilePicOptions = () => {
+    leftHeaderPicClick
+      ? setleftHeaderPicClick(false)
+      : setleftHeaderPicClick(true);
+  };
+  const changeProfilePic = () => {
+    console.log("hello");
+  };
   const signout = () => {
     signOut(auth)
       .then(() => {
@@ -39,13 +48,25 @@ const Header = ({ menuOptions, imageURL, chatName }) => {
     <div className="Header">
       <div className="header_profileSection">
         <Avatar
-          onClick={signout}
+          onClick={selectProfilePicOptions}
           sx={{ width: 40, height: 40 }}
           src={imageURL}
         />
+        {whichHeader == "header__left" && leftHeaderPicClick && (
+          <div className="header__left__profile__menu">
+            <p
+              onClick={changeProfilePic}
+              className="header__left__change_profile_pic"
+            >
+              Change Profile Picture
+            </p>
+            <p onClick={signout} className="header__left__logout">
+              Log Out
+            </p>
+          </div>
+        )}
         <h3>{chatName}</h3>
       </div>
-
       <div className="headerLeft__box">{MenuOptionsDisplay(menuOptions)}</div>
     </div>
   );

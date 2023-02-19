@@ -33,10 +33,10 @@ function App() {
     });
     return unsubscribe;
   }, []);
-  console.log("userdata", userData);
+
   return (
     <div className="app">
-      {userData.user === null ? (
+      {userData?.user === null ? (
         <Layout></Layout>
       ) : (
         <>
