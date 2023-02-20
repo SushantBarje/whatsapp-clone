@@ -16,8 +16,8 @@ function App() {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (userCredentials) => {
       if (userCredentials) {
-        console.log("User logged in");
-        console.log(userCredentials);
+        // console.log("User logged in");
+        // console.log(userCredentials);
         dispatch(
           login({
             email: userCredentials.email,
@@ -31,12 +31,15 @@ function App() {
         console.log("user signed off");
       }
     });
-    return unsubscribe;
   }, []);
+  // console.log(userData?.user === undefined);
+  // console.log(userData === null);
+  // console.log(userData?.user);
+  // console.log(userData);
 
   return (
     <div className="app">
-      {userData?.user === null ? (
+      {userData === null ? (
         <Layout></Layout>
       ) : (
         <>

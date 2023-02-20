@@ -10,7 +10,7 @@ import Avatar from "@mui/material/Avatar";
 import { auth } from "../../firebase";
 import { signOut } from "firebase/auth";
 import { useDispatch } from "react-redux";
-import { login } from "../../features/userSlice";
+import { logout } from "../../features/userSlice";
 
 const Header = ({ menuOptions, imageURL, chatName, whichHeader }) => {
   const dispatch = useDispatch();
@@ -27,11 +27,7 @@ const Header = ({ menuOptions, imageURL, chatName, whichHeader }) => {
     signOut(auth)
       .then(() => {
         console.log("sign out");
-        dispatch(
-          login({
-            user: null,
-          })
-        );
+        dispatch(logout(null));
       })
       .catch((error) => {
         console.log(error);
