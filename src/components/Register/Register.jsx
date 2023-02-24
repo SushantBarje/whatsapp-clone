@@ -8,6 +8,7 @@ import { createUser } from "../../utils/auth";
 import Button from "@mui/material/Button";
 import MailLockIcon from "@mui/icons-material/MailLock";
 import KeyIcon from "@mui/icons-material/Key";
+import { useDispatch } from "react-redux";
 
 const Register = () => {
   // const [name, setName] = useState("");
@@ -20,10 +21,39 @@ const Register = () => {
     watch,
     formState: { errors },
   } = useForm();
+  const dispatch = useDispatch();
 
   const registerUser = (formData) => {
     console.log(formData);
-    createUser(formData);
+
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user);
+        updateProfile(auth.currentUser, {
+          displayName: fullName,
+          photoURL: " ",
+        }).then(async () => {
+          const docRef = await setDoc(doc(db, "users", email), {
+            name: fullName,
+            photoURL: " ",
+          });
+        });
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+
+        dispatch(
+          setErrorDetails({
+            errorCode: errorCode,
+            errorMessage: errorMessage,
+          })
+        );
+
+        console.log(errorCode);
+        console.log(errorMessage);
+      });
   };
 
   return (

@@ -33,12 +33,19 @@ import {
 import { db } from "../../firebase";
 import SearchBox from "../SearchBox/SearchBox";
 import { selectsearchText } from "../../features/searchSlice";
+import { useForm } from "react-hook-form";
 
 const AppBody = () => {
   const chatId = useSelector(selectChatId);
   const searchInputText = useSelector(selectsearchText);
   const [searchResults, setSearchResults] = useState([]);
   const [searchActivate, setSearchActivate] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
 
   console.log(chatId);
   const [chatDetails, loading, error] = useDocument(
@@ -49,7 +56,9 @@ const AppBody = () => {
   );
 
   console.log(chatDetails);
-  const sendMessage = () => {};
+  const sendMessage = (formData) => {
+    console.log(formData);
+  };
 
   useEffect(() => {
     const getSearchResult = async () => {
@@ -164,8 +173,13 @@ const AppBody = () => {
           <IconButton className="input_chat_option">
             <AttachFileIcon></AttachFileIcon>
           </IconButton>
-          <form onSubmit={sendMessage()}>
-            <input type="text" placeholder="Type a message" />
+          <form onSubmit={handleSubmit(sendMessage)}>
+            <input
+              name="message"
+              type="text"
+              {...register("message", { required: true })}
+              placeholder="Type a message"
+            />
             <button type="submit">SEND</button>
           </form>
           <IconButton className="input_chat_option">

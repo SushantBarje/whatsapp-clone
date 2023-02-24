@@ -6,7 +6,12 @@ import { useForm } from "react-hook-form";
 import Button from "@mui/material/Button";
 import MailLockIcon from "@mui/icons-material/MailLock";
 import KeyIcon from "@mui/icons-material/Key";
-import { loginUser } from "../../utils/auth";
+
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebase";
+import { useDispatch } from "react-redux";
+import { setErrorDetails } from "../../features/errorSlice";
+// import { loginUser } from "../../utils/auth";
 
 const Login = () => {
   const {
@@ -15,9 +20,30 @@ const Login = () => {
     watch,
     formState: { errors },
   } = useForm();
+  const dispatch = useDispatch();
 
   const signIn = (formData) => {
-    loginUser(formData);
+    const { email, password } = formData;
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        const errors = ["auth/user-not-found"];
+        if (errors.includes(errorCode))
+          dispatch(
+            setErrorDetails({
+              errorCode: errorCode,
+              errorMessage: "Invalid User",
+            })
+          );
+
+        console.log(errorCode);
+        console.log(errorMessage);
+      });
   };
 
   return (
