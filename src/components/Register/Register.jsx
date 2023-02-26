@@ -10,6 +10,22 @@ import MailLockIcon from "@mui/icons-material/MailLock";
 import KeyIcon from "@mui/icons-material/Key";
 import { useDispatch } from "react-redux";
 
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  updateProfile,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { db, auth } from "../../firebase";
+import {
+  setDoc,
+  doc,
+  serverTimestamp,
+  addDoc,
+  collection,
+} from "firebase/firestore";
+import { setErrorDetails } from "../../features/errorSlice";
+
 const Register = () => {
   // const [name, setName] = useState("");
   // const [email, setEmail] = useState("");
@@ -25,7 +41,7 @@ const Register = () => {
 
   const registerUser = (formData) => {
     console.log(formData);
-
+    const { fullName, email, password } = formData;
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
@@ -34,10 +50,25 @@ const Register = () => {
           displayName: fullName,
           photoURL: " ",
         }).then(async () => {
-          const docRef = await setDoc(doc(db, "users", email), {
-            name: fullName,
-            photoURL: " ",
-          });
+          const userRef = doc(db, "users");
+          // const docRef = await setDoc(userRef, {
+          //   name: fullName,
+          //   email: email,
+          //   photoURL: null,
+          //   user_created_timestamp: serverTimestamp(),
+          //   user_updated_timestamp: null,
+          //   chatsId: [],
+          // });
+          const chatRef = await addDoc(
+            collection(doc(userRef, "chats", email), "message"),
+            {
+              message: "First Message",
+              timestamp: serverTimestamp(),
+              seen: false,
+              sender: email,
+              receiver: email,
+            }
+          );
         });
       })
       .catch((error) => {

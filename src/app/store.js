@@ -3,6 +3,7 @@ import chatReducer from "../features/chatSlice";
 import userReducer from "../features/userSlice";
 import searchReducer from "../features/searchSlice";
 import errorReducer from "../features/errorSlice";
+import appReducer from "../features/appSlice";
 
 export const store = configureStore({
   reducer: {
@@ -10,5 +11,6 @@ export const store = configureStore({
     user: userReducer,
     search: searchReducer,
     error: errorReducer,
+    app: appReducer,
   },
 });

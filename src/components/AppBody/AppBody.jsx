@@ -34,30 +34,52 @@ import { db } from "../../firebase";
 import SearchBox from "../SearchBox/SearchBox";
 import { selectsearchText } from "../../features/searchSlice";
 import { useForm } from "react-hook-form";
+import { selectUserData } from "../../features/userSlice";
+import { setDoc, addDoc, serverTimestamp } from "firebase/firestore";
 
 const AppBody = () => {
   const chatId = useSelector(selectChatId);
   const searchInputText = useSelector(selectsearchText);
   const [searchResults, setSearchResults] = useState([]);
   const [searchActivate, setSearchActivate] = useState(false);
+  const user = useSelector(selectUserData);
+  const [chatsData, setChatsData] = useState([]);
   const {
     register,
     handleSubmit,
     watch,
+    setValue,
     formState: { errors },
   } = useForm();
 
-  console.log(chatId);
   const [chatDetails, loading, error] = useDocument(
     chatId && doc(db, "users", chatId)
   );
   const [chats, chatLoading, chatError] = useCollection(
-    collection(db, "users")
+    collection(doc(db, "users", user.email), "chats")
   );
 
   console.log(chatDetails);
-  const sendMessage = (formData) => {
+  const sendMessage = async (formData) => {
     console.log(formData);
+    const { message } = formData;
+    console.log(chatDetails.id);
+    setSearchResults([]);
+    setValue("message", "");
+    const chatRef = collection(doc(db, "users", user.email), "chats");
+    const chatDetailsRef = doc(chatRef, chatDetails.id);
+    const chatDetailsSubmit = await setDoc(chatDetailsRef, {
+      name: chatDetails?.data()?.name,
+    });
+    const messagesRef = collection(chatDetailsRef, "messages");
+
+    const messagesSubmit = await addDoc(messagesRef, {
+      message: message,
+      timestamp: serverTimestamp(),
+      seen: false,
+      sender: user.email,
+      receiver: chatDetails.id,
+    });
   };
 
   useEffect(() => {
@@ -85,7 +107,7 @@ const AppBody = () => {
       setSearchResults([]);
     }
   }, [searchInputText]);
-
+  console.log(user);
   return (
     <div className="appBody">
       <div className="appBody__left">
@@ -97,9 +119,8 @@ const AppBody = () => {
             <ChatIcon />,
             <MoreVertIcon />,
           ]}
-          imageURL={
-            "https://pps.whatsapp.net/v/t61.24694-24/156606516_223405766360003_6135443148643623556_n.jpg?stp=dst-jpg_s96x96&ccb=11-4&oh=01_AdQhQbDkZgf65dzn3J_5pBejETdf8JhNHTG5E1d_J5NHew&oe=63F49FB8"
-          }
+          imageURL={user.photoURL}
+          selfName={user.displayName}
         ></Header>
         <SearchBox></SearchBox>
         <div className="search_items"></div>
@@ -126,9 +147,7 @@ const AppBody = () => {
             <ChatList
               key={chat.id}
               id={chat.id}
-              imageURL={
-                "https://pps.whatsapp.net/v/t61.24694-24/156606516_223405766360003_6135443148643623556_n.jpg?stp=dst-jpg_s96x96&ccb=11-4&oh=01_AdQhQbDkZgf65dzn3J_5pBejETdf8JhNHTG5E1d_J5NHew&oe=63F49FB8"
-              }
+              imageURL={chat.photoURL}
               chatName={chat.data().name}
               timestamp={"6:54 pm"}
               lastMessage={
@@ -177,6 +196,7 @@ const AppBody = () => {
             <input
               name="message"
               type="text"
+              defaultValue=""
               {...register("message", { required: true })}
               placeholder="Type a message"
             />

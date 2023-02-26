@@ -9,18 +9,20 @@ import { auth } from "./firebase";
 import { useDispatch, useSelector } from "react-redux";
 import { login, selectUserData } from "./features/userSlice";
 import { getErrorDetails, resetErrorDetails } from "./features/errorSlice";
+import { setleftHeaderPicClick } from "./features/appSlice";
 
 function App() {
   const [user, setUser] = useState(false);
-  const userData = useSelector(selectUserData);
+  const userData = useSelector(selectUserData); 
   const errorData = useSelector(getErrorDetails);
   const dispatch = useDispatch();
+
   // console.log(user);
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (userCredentials) => {
       if (userCredentials) {
         // console.log("User logged in");
-        // console.log(userCredentials);
+        console.log(userCredentials);
         dispatch(
           login({
             email: userCredentials.email,

@@ -34,7 +34,7 @@
 
 .header__left__profile__menu {
   position: absolute;
-  bottom: -110px;
+  bottom: -150px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -46,6 +46,12 @@
   z-index: 999;
 }
 
+.header__left__profile__menu > label {
+  padding: 10px 10px 10px 20px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #59666e;
+}
 .header__left__profile__menu > p {
   padding: 10px 10px 10px 20px;
   font-size: 16px;
@@ -53,6 +59,17 @@
   color: #59666e;
 }
 
+.header__left__profile__menu > h3 {
+  padding: 10px 10px 10px 12px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #59666e;
+  border-bottom: 1px solid whitesmoke;
+}
+
 .header__left__profile__menu > p:hover {
+  background-color: #f5f6f6;
+}
+.header__left__profile__menu > label:hover {
   background-color: #f5f6f6;
 }
